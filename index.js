@@ -10,14 +10,15 @@ const quotaTag = document.getElementById("quota-tag")
 const quotaButton = document.getElementById("quota-btn")
 
 donationButton.addEventListener("click",function(){
-    const donationValue = parseFloat(document.getElementById("flood-donation").value)
+    const donationValue = document.getElementById("flood-donation").value
 
     if(donationValue<=0 || isNaN(donationValue) || donationValue > donationAmount){
         return alert("please enter valid number")
     }
-    console.log(donationValue);
+    const donationNew = parseFloat(donationValue)
+    console.log(donationNew);
 
-    donation.innerText = donationValue;
+    donation.innerText = donationNew;
 
     document.getElementById("flood-donation").value = ""
 
@@ -35,12 +36,13 @@ donationButton.addEventListener("click",function(){
 })
 
 reliefButton.addEventListener("click",function(){
-    const donateRelief = parseFloat(document.getElementById("donate-relief").value)
+    const donateRelief = document.getElementById("donate-relief").value
     if(donateRelief<=0 || isNaN(donateRelief) || donateRelief > donationAmount){
         return alert("please enter valid number")
     }
-    console.log(donateRelief);
-    reliefDonation.innerText = donateRelief;
+    const reliefAmount = parseFloat(donateRelief)
+    console.log(reliefAmount);
+    reliefDonation.innerText = reliefAmount;
 
     document.getElementById("donate-relief").value = ""
 
@@ -57,12 +59,13 @@ reliefButton.addEventListener("click",function(){
 })
 
 quotaButton.addEventListener("click",function(){
-    const quotaDonation = parseFloat(document.getElementById("quota-donation").value)
+    const quotaDonation = document.getElementById("quota-donation").value
     if(quotaDonation<=0 || isNaN(quotaDonation) || quotaDonation > donationAmount){
         return alert("please enter valid number")
     }
-    console.log(quotaDonation);
-    quotaTag.innerText = quotaDonation;
+    const quotaAmount = parseFloat(quotaDonation)
+    console.log(quotaAmount);
+    quotaTag.innerText = quotaAmount;
 
     document.getElementById("quota-donation").value = ""
 
