@@ -26,6 +26,12 @@ donationButton.addEventListener("click",function(){
 
     donation.innerText = amountDonation;
 
+    const amount = donationAmount.innerText
+    const newValue = parseFloat(amount)
+    const totalAmount = newValue - amountDonation
+
+    donationAmount.innerText = totalAmount
+
     document.getElementById("flood-donation").value = ""
 
     const historyItem = document.createElement("div")
@@ -56,6 +62,12 @@ reliefButton.addEventListener("click",function(){
     const newAmount = reliefAmount + reliefMoney;
     reliefDonation.innerText = newAmount
 
+    const amount = donationAmount.innerText
+    const newValue = parseFloat(amount)
+    const totalAmount = newValue - newAmount
+
+    donationAmount.innerText = totalAmount
+
     document.getElementById("donate-relief").value = ""
 
     const historyItem = document.createElement("div")
@@ -83,6 +95,12 @@ quotaButton.addEventListener("click",function(){
     const quotaMoney = parseFloat(donationQuota)
     const newMoney = quotaAmount + quotaMoney
     quotaTag.innerText = newMoney
+
+    const amount = donationAmount.innerText
+    const newValue = parseFloat(amount)
+    const totalAmount = newValue - newMoney
+
+    donationAmount.innerText = totalAmount
 
     document.getElementById("quota-donation").value = ""
 
